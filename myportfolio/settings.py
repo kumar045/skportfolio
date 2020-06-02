@@ -24,7 +24,7 @@ SECRET_KEY = '1cq*4)t(i5fjjzm73dp0i64v&3g8kw@&79k883x4kl@l5^1rs&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['shivamkportfolio.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'sqlite3.db',
         'USER':'shivamkumar',
         'PASSWORD':'kumar098',
-        'HOST':'localhost',
+        'HOST':'',
         'PORT':'',
     }
 }
@@ -123,20 +123,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
-
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, "static"),
-    ]
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = BASE_DIR
 MEDIA_URL = '/media/'
-
 
 
 
